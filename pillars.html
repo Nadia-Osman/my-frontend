@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillars of Islam</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #2e7d32; /* Green background */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .content-box {
+    background: rgba(255, 255, 255, 0.1); /* Light translucent white */
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    border: 2px solid #ffffff; /* White border for contrast */
+  }
+  h1 {
+    margin-top: 0;
+    color: #ffffff;
+  }
+  ol {
+    line-height: 1.6;
+    color: #ffffff;
+  }
+  .btn {
+    padding: 10px 16px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #ffffff; /* White button */
+    color: #2e7d32; /* Green text */
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: #c8e6c9; /* Lighter green on hover */
+    color: #1b5e20; /* Darker green text */
+  }
+</style>
+</head>
+<body>
+  <div class="content-box">
+    <h1>Five Pillars of Islam</h1>
+    <ol>
+      <li><b>Shahada (Faith)</b> – Declaration of belief in Allah and His Messenger ﷺ.</li>
+      <li><b>Salah (Prayer)</b> – Performing the five daily prayers.</li>
+      <li><b>Zakat (Charity)</b> – Giving a portion of wealth to the needy.</li>
+      <li><b>Sawm (Fasting in Ramadan)</b> – Abstaining from food, drink, and desires during Ramadan.</li>
+      <li><b>Hajj (Pilgrimage)</b> – Journey to Makkah at least once if able.</li>
+    </ol>
+    <button class="btn back" onclick="goBack()">⬅ Back to Menu</button>
+  </div>
+  <script>
+    function goBack() { window.location.href = 'menu.html'; }
+  </script>
+</body>
+</html>

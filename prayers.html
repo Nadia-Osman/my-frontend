@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NABRIO Islamic App — Daily Prayers</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e6f2e6;
+      color: #2e7d32;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1b5e20;
+      margin-bottom: 25px;
+      font-weight: normal;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .prayer {
+      background: #f0fff0;
+      margin: 12px 0;
+      padding: 18px 20px;
+      border-left: 6px solid #2e7d32;
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .prayer:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .prayer h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      color: #1b5e20;
+    }
+
+    .prayer p {
+      margin: 4px 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back-btn button {
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background: #2e7d32;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .back-btn button:hover {
+      background: #1b5e20;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Daily Prayers (Salah)</h1>
+    <h2>Times & Steps</h2>
+
+    <!-- Video Tutorial -->
+    <iframe src="https://www.youtube.com/embed/4zr6tNgmKSI" title="How to Perform Salah (Namaz) - Step by Step Guide" allowfullscreen></iframe>
+
+    <!-- Prayer List -->
+    <div class="prayer">
+      <h3>1. Fajr (Dawn Prayer)</h3>
+      <p><strong>Time:</strong> Before sunrise</p>
+      <p><strong>Description:</strong> Performed at dawn. Two units (rak'ahs) of prayer to start the day in remembrance of Allah.</p>
+    </div>
+    <div class="prayer">
+      <h3>2. Dhuhr (Noon Prayer)</h3>
+      <p><strong>Time:</strong> After the sun passes its zenith</p>
+      <p><strong>Description:</strong> Four rak'ahs performed in the early afternoon. A moment to pause and reflect during the day.</p>
+    </div>
+    <div class="prayer">
+      <h3>3. Asr (Afternoon Prayer)</h3>
+      <p><strong>Time:</strong> Late afternoon</p>
+      <p><strong>Description:</strong> Four rak'ahs, reminding us to stay connected to Allah even during busy times.</p>
+    </div>
+    <div class="prayer">
+      <h3>4. Maghrib (Sunset Prayer)</h3>
+      <p><strong>Time:</strong> Just after sunset</p>
+      <p><strong>Description:</strong> Three rak'ahs, marking the end of the day and showing gratitude for the blessings received.</p>
+    </div>
+    <div class="prayer">
+      <h3>5. Isha (Night Prayer)</h3>
+      <p><strong>Time:</strong> After twilight</p>
+      <p><strong>Description:</strong> Four rak'ahs, a peaceful prayer before rest, reflecting on the day and seeking forgiveness.</p>
+    </div>
+
+    <div class="back-btn">
+      <button onclick="window.location.href='menu.html'">← Back to Menu</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How to Perform Wudu — NABRIO</title>
+  <style>
+    :root{
+      --bg1:#1e7f3e; /* dark green */
+      --bg2:#4caf50; /* lighter green */
+      --card-bg: rgba(255,255,255,0.12);
+      --accent:#ffffff; /* white buttons */
+      --text:#ffffff; /* main text white */
+      --muted: rgba(255,255,255,0.9);
+      --container-w: 760px;
+    }
+    html,body{
+      height:100%; 
+      margin:0; 
+      font-family:Arial, Helvetica, sans-serif; 
+      background: linear-gradient(120deg,var(--bg1),var(--bg2)); 
+      color:var(--text);
+    }
+    .wrap{
+      min-height:100%; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      padding:28px;
+    }
+    .card{
+      width:100%; 
+      max-width:var(--container-w); 
+      background:var(--card-bg); 
+      border-radius:12px; 
+      padding:22px; 
+      box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    }
+    h1{margin:0 0 8px; font-size:22px}
+    p.lead{margin:0 0 16px; color:var(--muted); font-size:14px}
+    .steps{
+      background: rgba(255,255,255,0.06); 
+      padding:14px; 
+      border-radius:10px; 
+      margin-bottom:16px; 
+      color:var(--muted); 
+      font-size:14px; 
+      line-height:1.55;
+    }
+    .steps ol{padding-left:18px; margin:0;}
+    .video-wrapper{
+      position:relative; 
+      padding-bottom:56.25%; 
+      height:0; 
+      overflow:hidden; 
+      border-radius:10px; 
+      background:#000; 
+      margin-bottom:14px;
+    }
+    .video-wrapper iframe{
+      position:absolute; 
+      top:0; left:0; 
+      width:100%; 
+      height:100%; 
+      border:0;
+    }
+    .actions{
+      display:flex; 
+      gap:12px; 
+      flex-wrap:wrap; 
+      margin-top:8px;
+    }
+    .btn{
+      display:inline-block; 
+      padding:10px 14px; 
+      border-radius:10px; 
+      text-decoration:none; 
+      font-weight:700; 
+      color:#222; 
+      background:var(--accent);
+      transition:transform .12s ease, box-shadow .15s ease;
+    }
+    .btn:hover{
+      transform:scale(1.03); 
+      box-shadow:0 8px 18px rgba(0,0,0,0.25);
+    }
+    .btn.secondary{
+      background:transparent; 
+      color:var(--muted); 
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .footer-note{margin-top:12px; font-size:13px; color:var(--muted);}
+    @media (max-width:520px){ .card{padding:16px} h1{font-size:20px} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+      <h1>How to Perform Wudu (Ablution)</h1>
+      <p class="lead">Step-by-step guide to make Wudu correctly — followed by a clear video tutorial you can watch anytime.</p>
+
+      <div class="steps" aria-live="polite">
+        <strong>Quick steps</strong>
+        <ol>
+          <li>Make the intention (niyyah) to perform wudu.</li>
+          <li>Say “Bismillah” (In the name of Allah).</li>
+          <li>Wash both hands up to the wrists three times.</li>
+          <li>Rinse the mouth three times.</li>
+          <li>Inhale water gently into the nose and blow out three times.</li>
+          <li>Wash the face thoroughly three times.</li>
+          <li>Wash the right forearm up to the elbow three times, then the left.</li>
+          <li>Wipe the head once with wet hands (masah).</li>
+          <li>Wipe the inner and outer ears once.</li>
+          <li>Wash the right foot up to the ankle three times, then the left.</li>
+        </ol>
+        <p style="margin-top:8px;color:var(--muted)">These are general steps in accordance with the Sunnah — local madhhab details may vary slightly.</p>
+      </div>
+
+      <div class="video-wrapper" aria-label="Wudu video tutorial">
+        <iframe src="https://www.youtube.com/embed/2xS70Zn-jRk" title="How to: Wudhu - Green Lane Masjid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="https://www.youtube.com/watch?v=2xS70Zn-jRk" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+        <a class="btn secondary" href="menu.html">⬅ Back to Menu</a>
+      </div>
+
+      <p class="footer-note">If this video does not play in your region, tell me and I will provide an alternative tutorial.</p>
+    </div>
+  </div>
+</body>
+</html>

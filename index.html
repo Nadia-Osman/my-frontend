@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login Form -->
+    <div class="form active" id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" oninput="checkLoginFields()">
+      <input type="password" id="login-password" placeholder="Password" oninput="checkLoginFields()">
+      <button id="login-btn" onclick="login()" disabled>Login</button>
+      <div class="toggle">
+        New here? <a onclick="toggleForms()">Sign up</a>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form" id="signup-form">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-name" placeholder="Full Name" oninput="validatePassword()">
+      <input type="email" id="signup-email" placeholder="Email" oninput="validatePassword()">
+      <input type="password" id="signup-password" placeholder="Password" oninput="validatePassword()">
+      
+      <ul class="rules">
+        <li id="length" class="invalid">At least 8 characters</li>
+        <li id="uppercase" class="invalid">At least 1 uppercase letter</li>
+        <li id="lowercase" class="invalid">At least 1 lowercase letter</li>
+        <li id="number" class="invalid">At least 1 number</li>
+        <li id="special" class="invalid">At least 1 special character (!@#$%^&*)</li>
+      </ul>
+
+      <button id="signup-btn" onclick="signup()" disabled>Sign Up</button>
+      <div class="toggle">
+        Already have an account? <a onclick="toggleForms()">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to external JS -->
+  <script src="script.js"></script>
+</body>
+</html>

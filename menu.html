@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NABRIO Islamic App — Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f8f5;
+      color: #2f4f2f;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #2e7d32;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #1b5e20;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .sub {
+      text-align: center;
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .intro {
+      background: #e8f5e9;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      color: #2f4f2f;
+      text-align: center;
+    }
+
+    /* Sections */
+    .section {
+      display: none;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #f1f8f1;
+      border-radius: 10px;
+    }
+    .section.active {
+      display: block;
+    }
+
+    /* Cards */
+    .lesson-cards, .about-cards, .charity-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card, .about-card, .charity-card {
+      background: #e8f5e9;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .card:hover, .about-card:hover, .charity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      background: #c8e6c9;
+    }
+    .card h3, .about-card h3, .charity-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #2e7d32;
+    }
+    .card p, .about-card p, .charity-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+      color: #555;
+    }
+
+    /* About section icons */
+    .about-card .icon, .charity-card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* Quiz */
+    .quiz-card button {
+      margin:5px; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;
+    }
+
+    /* Contact Button & Popup */
+    #contactBtn {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #contactBtn:hover {
+      background: #1b5e20;
+    }
+    #contactPopup {
+      display: none;
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.6);
+      justify-content:center; align-items:center;
+      z-index:1000;
+    }
+    #contactPopup div {
+      background:white;
+      padding:30px 25px;
+      border-radius:12px;
+      width:90%; max-width:500px;
+      position:relative;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+    }
+    #closePopup {
+      position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#2e7d32;
+    }
+    #contactForm input, #contactForm textarea {
+      width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; font-size:14px;
+    }
+    #contactForm button {
+      width:100%; padding:12px; background:#2e7d32; color:white; font-weight:bold; border:none; border-radius:8px; cursor:pointer;
+    }
+    #contactForm button:hover {
+      background: #1b5e20;
+    }
+
+    @media (max-width: 600px) {
+      .lesson-cards, .about-cards, .charity-cards { grid-template-columns: 1fr; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity:0; }
+      50% { transform: scale(1.1); opacity:1; }
+      70% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('quiz')">Quiz</a>
+    <a href="#" onclick="showSection('charity')">Charity</a>
+    <a href="#" onclick="showSection('lessons')">Lessons</a>
+  </nav>
+
+  <div class="container">
+    <!-- Home -->
+    <div id="home" class="section active">
+      <h1>Welcome 👋</h1>
+      <div class="intro">
+        With NABRIO you’ll learn the Qur’an, Salah, the Pillars, and daily essentials — step by step. Ready to begin your journey! 🌙
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="section">
+      <h2>About NABRIO Islamic App</h2>
+      <p class="sub">Learn Islamic teachings step by step with interactive lessons, videos, and quizzes.</p>
+      <div class="about-cards">
+        <div class="about-card"><div class="icon">📖</div><h3>Qur'an Lessons</h3><p>Recitation, translation, and tafsir of every Surah.</p></div>
+        <div class="about-card"><div class="icon">🕌</div><h3>Daily Prayers</h3><p>Step-by-step guides on how to perform the five daily prayers.</p></div>
+        <div class="about-card"><div class="icon">☪️</div><h3>Pillars of Islam</h3><p>Understand the Five Pillars of Islam and their importance.</p></div>
+        <div class="about-card"><div class="icon">🌙</div><h3>99 Names of Allah</h3><p>Learn all the names of Allah with meanings and pronunciations.</p></div>
+        <div class="about-card"><div class="icon">🧼</div><h3>How to Perform Wudu</h3><p>Step-by-step instructions on performing ablution.</p></div>
+      </div>
+    </div>
+
+    <!-- Lessons -->
+    <div id="lessons" class="section">
+      <h2>Lessons</h2>
+      <div class="lesson-cards">
+        <div class="card" onclick="go('quran.html')"><h3>📖 Qur’an Lessons</h3><p>Recitation, translation, and video lessons for every Surah.</p></div>
+        <div class="card" onclick="go('prayers.html')"><h3>🕌 Daily Prayers</h3><p>Step-by-step guide for the five daily prayers.</p></div>
+        <div class="card" onclick="go('pillars.html')"><h3>☪️ Pillars of Islam</h3><p>Learn the Five Pillars with explanations and videos.</p></div>
+        <div class="card" onclick="go('99 names.html')"><h3>🌙 99 Names of Allah</h3><p>Learn all names of Allah with Arabic, meanings, and video.</p></div>
+        <div class="card" onclick="go('wudu.html')"><h3>🧼 How to Perform Wudu</h3><p>Step-by-step guide with videos on ablution.</p></div>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz" class="section">
+      <h2>Interactive Quiz</h2>
+      <p class="sub">Test your knowledge on Quranic lessons, prayers, pillars of Islam, and 99 Names of Allah.</p>
+
+      <!-- Quiz Tabs -->
+      <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+        <button class="quiz-tab" data-quiz="quran" style="padding:10px 20px; border:none; border-radius:5px; background:#2e7d32; color:white; cursor:pointer;">Qur’an Lessons</button>
+        <button class="quiz-tab" data-quiz="prayers" style="padding:10px 20px; border:none; border-radius:5px; background:#2e7d32; color:white; cursor:pointer;">Daily Prayers</button>
+        <button class="quiz-tab" data-quiz="pillars" style="padding:10px 20px; border:none; border-radius:5px; background:#2e7d32; color:white; cursor:pointer;">Pillars of Islam</button>
+        <button class="quiz-tab" data-quiz="names" style="padding:10px 20px; border:none; border-radius:5px; background:#2e7d32; color:white; cursor:pointer;">99 Names of Allah</button>
+      </div>
+
+      <!-- Score Display -->
+      <div id="scoreDisplay" style="text-align:center; margin-bottom:20px; font-size:18px; font-weight:bold;"></div>
+
+      <!-- Quiz Cards Container -->
+      <div id="quizCards" style="display:flex; flex-direction:column; gap:20px; align-items:center;"></div>
+
+      <!-- Reset Quiz Button -->
+      <div style="text-align:center; margin:20px 0;">
+        <button id="resetQuiz" style="background:#ff5722; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Reset Quiz</button>
+      </div>
+    </div>
+
+    <!-- Charity -->
+    <div id="charity" class="section">
+      <h2>Charity (Zakat)</h2>
+      <p class="sub">Learn the importance of giving Zakat and supporting the needy.</p>
+      <div class="charity-cards">
+        <div class="charity-card"><div class="icon">🤲</div><h3>Give Zakat</h3><p>Fulfill your obligation by giving a portion of your wealth.</p></div>
+        <div class="charity-card"><div class="icon">💡</div><h3>Support Education</h3><p>Donate to build schools, provide books, and empower communities.</p></div>
+        <div class="charity-card"><div class="icon">🏥</div><h3>Healthcare Assistance</h3><p>Help provide medical care for the sick and needy.</p></div>
+      </div>
+      <div style="text-align:center; margin-top:25px;">
+        <button id="contactBtn">Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Popup -->
+  <div id="contactPopup">
+    <div>
+      <span id="closePopup">&times;</span>
+      <h2 style="text-align:center;">Contact NABRIO</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+    <!-- Link to external JS -->
+  <script src="menu.js"></script>
+
+</body>
+</html>
