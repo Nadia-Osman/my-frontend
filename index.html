@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login & Signup</title>
+  <title>Login & Signup — NABRIO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+
+    <!-- Message Display -->
+    <div id="message" role="alert" style="text-align:center; margin-bottom:10px; color:green;"></div>
+
     <!-- Login Form -->
-    <div class="form active" id="login-form">
+    <form class="form active" id="login-form" onsubmit="return false;">
       <h2>Login</h2>
-      <input type="email" id="login-email" placeholder="Email" oninput="checkLoginFields()">
-      <input type="password" id="login-password" placeholder="Password" oninput="checkLoginFields()">
+      <input type="email" id="login-email" placeholder="Email" aria-label="Email" oninput="checkLoginFields()">
+      <input type="password" id="login-password" placeholder="Password" aria-label="Password" oninput="checkLoginFields()">
       <button id="login-btn" onclick="login()" disabled>Login</button>
       <div class="toggle">
-        New here? <a onclick="toggleForms()">Sign up</a>
+        New here? <button type="button" onclick="toggleForms()">Sign up</button>
       </div>
-    </div>
+    </form>
 
     <!-- Signup Form -->
-    <div class="form" id="signup-form">
+    <form class="form" id="signup-form" onsubmit="return false;">
       <h2>Sign Up</h2>
-      <input type="text" id="signup-name" placeholder="Full Name" oninput="validatePassword()">
-      <input type="email" id="signup-email" placeholder="Email" oninput="validatePassword()">
-      <input type="password" id="signup-password" placeholder="Password" oninput="validatePassword()">
+      <input type="text" id="signup-name" placeholder="Full Name" aria-label="Full Name" oninput="validateForm()">
+      <input type="email" id="signup-email" placeholder="Email" aria-label="Email" oninput="validateForm()">
+      <input type="password" id="signup-password" placeholder="Password" aria-label="Password" oninput="validateForm()">
       
       <ul class="rules">
         <li id="length" class="invalid">At least 8 characters</li>
@@ -36,12 +40,12 @@
 
       <button id="signup-btn" onclick="signup()" disabled>Sign Up</button>
       <div class="toggle">
-        Already have an account? <a onclick="toggleForms()">Login</a>
+        Already have an account? <button type="button" onclick="toggleForms()">Login</button>
       </div>
-    </div>
+    </form>
+
   </div>
 
-  <!-- Link to external JS -->
   <script src="script.js"></script>
 </body>
 </html>
