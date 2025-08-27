@@ -1,3 +1,11 @@
+// ---------------------- Navigation ----------------------
+function go(url) {
+  window.location.href = url;
+}
+
+
+
+
 // ---------------------- Section Switching ----------------------
 function showSection(id) {
   document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
