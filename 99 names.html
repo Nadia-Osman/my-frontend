@@ -24,16 +24,6 @@
       text-align: center;
       color: #2e7d32;
     }
-    .video-container {
-      margin: 20px 0;
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      height: 315px;
-      border-radius: 10px;
-      border: none;
-    }
     .cards-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -52,6 +42,11 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .card.active {
+      background: #c8e6c9;
+      border-color: #1b5e20;
+      box-shadow: 0 0 20px rgba(46, 125, 50, 0.6);
     }
     .card h3 {
       margin: 0;
@@ -84,114 +79,120 @@
     <h1>🌙 The 99 Names of Allah</h1>
     <p>Learning the 99 Names of Allah (Asma Ul Husna) is an important part of Islamic knowledge. Each name reflects a unique attribute of Allah. Understanding and reciting them increases love, mindfulness, and devotion.</p>
 
-    <div class="video-container">
-      <h2>Learn the 99 Names of Allah</h2>
-      <iframe src="https://www.youtube.com/embed/plnmc_vtdTo" allowfullscreen></iframe>
+    <!-- AUDIO CONTROL -->
+    <div style="text-align:center; margin:20px 0;">
+      <button id="playPauseBtn">▶️ Play Recitation</button>
+      <audio id="asmaAudio" src="audio/asma-ul-husna.mp3"></audio>
     </div>
 
-    <div class="cards-container">
-      <div class="card"><h3>الله</h3><p>Allah</p></div>
-      <div class="card"><h3>الرحمن</h3><p>Ar-Rahman</p></div>
-      <div class="card"><h3>الرحيم</h3><p>Ar-Rahim</p></div>
-      <div class="card"><h3>الملك</h3><p>Al-Malik</p></div>
-      <div class="card"><h3>القدوس</h3><p>Al-Quddus</p></div>
-      <div class="card"><h3>السلام</h3><p>As-Salam</p></div>
-      <div class="card"><h3>المؤمن</h3><p>Al-Mu’min</p></div>
-      <div class="card"><h3>المهيمن</h3><p>Al-Muhaymin</p></div>
-      <div class="card"><h3>العزيز</h3><p>Al-Aziz</p></div>
-      <div class="card"><h3>الجبار</h3><p>Al-Jabbar</p></div>
-      <div class="card"><h3>المتكبر</h3><p>Al-Mutakabbir</p></div>
-      <div class="card"><h3>الخالق</h3><p>Al-Khaliq</p></div>
-      <div class="card"><h3>البارئ</h3><p>Al-Bari’</p></div>
-      <div class="card"><h3>المصور</h3><p>Al-Musawwir</p></div>
-      <div class="card"><h3>الغفار</h3><p>Al-Ghaffar</p></div>
-      <div class="card"><h3>القهار</h3><p>Al-Qahhar</p></div>
-      <div class="card"><h3>الوهاب</h3><p>Al-Wahhab</p></div>
-      <div class="card"><h3>الرزاق</h3><p>Ar-Razzaq</p></div>
-      <div class="card"><h3>الفتاح</h3><p>Al-Fattah</p></div>
-      <div class="card"><h3>العليم</h3><p>Al-‘Alim</p></div>
-      <div class="card"><h3>القابض</h3><p>Al-Qabid</p></div>
-      <div class="card"><h3>الباسط</h3><p>Al-Basit</p></div>
-      <div class="card"><h3>الخافض</h3><p>Al-Khafid</p></div>
-      <div class="card"><h3>الرافع</h3><p>Ar-Rafi’</p></div>
-      <div class="card"><h3>المعز</h3><p>Al-Mu’izz</p></div>
-      <div class="card"><h3>المذل</h3><p>Al-Mudhill</p></div>
-      <div class="card"><h3>السميع</h3><p>As-Sami’</p></div>
-      <div class="card"><h3>البصير</h3><p>Al-Basir</p></div>
-      <div class="card"><h3>الحكم</h3><p>Al-Hakam</p></div>
-      <div class="card"><h3>العدل</h3><p>Al-‘Adl</p></div>
-      <div class="card"><h3>اللطيف</h3><p>Al-Latif</p></div>
-      <div class="card"><h3>الخبير</h3><p>Al-Khabir</p></div>
-      <div class="card"><h3>الحليم</h3><p>Al-Halim</p></div>
-      <div class="card"><h3>العظيم</h3><p>Al-‘Azim</p></div>
-      <div class="card"><h3>الغفور</h3><p>Al-Ghafur</p></div>
-      <div class="card"><h3>الشكور</h3><p>Ash-Shakur</p></div>
-      <div class="card"><h3>العلي</h3><p>Al-‘Ali</p></div>
-      <div class="card"><h3>الكبير</h3><p>Al-Kabir</p></div>
-      <div class="card"><h3>الحفيظ</h3><p>Al-Hafiz</p></div>
-      <div class="card"><h3>المقيت</h3><p>Al-Muqit</p></div>
-      <div class="card"><h3>الحسيب</h3><p>Al-Hasib</p></div>
-      <div class="card"><h3>الجليل</h3><p>Al-Jalil</p></div>
-      <div class="card"><h3>الكريم</h3><p>Al-Karim</p></div>
-      <div class="card"><h3>الرقيب</h3><p>Ar-Raqib</p></div>
-      <div class="card"><h3>المجيب</h3><p>Al-Mujib</p></div>
-      <div class="card"><h3>الواسع</h3><p>Al-Wasi’</p></div>
-      <div class="card"><h3>الحكيم</h3><p>Al-Hakim</p></div>
-      <div class="card"><h3>الودود</h3><p>Al-Wadud</p></div>
-      <div class="card"><h3>المجيد</h3><p>Al-Majid</p></div>
-      <div class="card"><h3>الباعث</h3><p>Al-Ba’ith</p></div>
-      <div class="card"><h3>الشهيد</h3><p>Ash-Shahid</p></div>
-      <div class="card"><h3>الحق</h3><p>Al-Haqq</p></div>
-      <div class="card"><h3>الوكيل</h3><p>Al-Wakil</p></div>
-      <div class="card"><h3>القوي</h3><p>Al-Qawiyy</p></div>
-      <div class="card"><h3>المتين</h3><p>Al-Matin</p></div>
-      <div class="card"><h3>الولي</h3><p>Al-Wali</p></div>
-      <div class="card"><h3>الحميد</h3><p>Al-Hamid</p></div>
-      <div class="card"><h3>المحصي</h3><p>Al-Muhsi</p></div>
-      <div class="card"><h3>المبدئ</h3><p>Al-Mubdi’</p></div>
-      <div class="card"><h3>المعيد</h3><p>Al-Mu’id</p></div>
-      <div class="card"><h3>المحيي</h3><p>Al-Muhyi</p></div>
-      <div class="card"><h3>المميت</h3><p>Al-Mumit</p></div>
-      <div class="card"><h3>الحي</h3><p>Al-Hayy</p></div>
-      <div class="card"><h3>القيوم</h3><p>Al-Qayyum</p></div>
-      <div class="card"><h3>الواجد</h3><p>Al-Wajid</p></div>
-      <div class="card"><h3>الماجد</h3><p>Al-Majid</p></div>
-      <div class="card"><h3>الواحد</h3><p>Al-Wahid</p></div>
-      <div class="card"><h3>الاحد</h3><p>Al-Ahad</p></div>
-      <div class="card"><h3>الصمد</h3><p>As-Samad</p></div>
-      <div class="card"><h3>القادر</h3><p>Al-Qadir</p></div>
-      <div class="card"><h3>المقتدر</h3><p>Al-Muqtadir</p></div>
-      <div class="card"><h3>المقدم</h3><p>Al-Muqaddim</p></div>
-      <div class="card"><h3>المؤخر</h3><p>Al-Mu’akhkhir</p></div>
-      <div class="card"><h3>الأول</h3><p>Al-Awwal</p></div>
-      <div class="card"><h3>الأخر</h3><p>Al-Akhir</p></div>
-      <div class="card"><h3>الظاهر</h3><p>Az-Zahir</p></div>
-      <div class="card"><h3>الباطن</h3><p>Al-Batin</p></div>
-      <div class="card"><h3>المتعالي</h3><p>Al-Muta’ali</p></div>
-      <div class="card"><h3>البر</h3><p>Al-Barr</p></div>
-      <div class="card"><h3>التواب</h3><p>At-Tawwab</p></div>
-      <div class="card"><h3>المنتقم</h3><p>Al-Muntaqim</p></div>
-      <div class="card"><h3>العفو</h3><p>Al-‘Afuww</p></div>
-      <div class="card"><h3>الرؤوف</h3><p>Ar-Ra’uf</p></div>
-      <div class="card"><h3>مالك الملك</h3><p>Malik-ul-Mulk</p></div>
-      <div class="card"><h3>ذو الجلال و الإكرام</h3><p>Dhul-Jalal wal-Ikram</p></div>
-      <div class="card"><h3>المقسط</h3><p>Al-Muqsit</p></div>
-      <div class="card"><h3>الجامع</h3><p>Al-Jami’</p></div>
-      <div class="card"><h3>الغني</h3><p>Al-Ghani</p></div>
-      <div class="card"><h3>المغني</h3><p>Al-Mughni</p></div>
-      <div class="card"><h3>المانع</h3><p>Al-Mani’</p></div>
-      <div class="card"><h3>الضار</h3><p>Ad-Darr</p></div>
-      <div class="card"><h3>النافع</h3><p>An-Nafi’</p></div>
-      <div class="card"><h3>النور</h3><p>An-Nur</p></div>
-      <div class="card"><h3>الهادي</h3><p>Al-Hadi</p></div>
-      <div class="card"><h3>البديع</h3><p>Al-Badi’</p></div>
-      <div class="card"><h3>الباقي</h3><p>Al-Baqi</p></div>
-      <div class="card"><h3>الوارث</h3><p>Al-Warith</p></div>
-      <div class="card"><h3>الرشيد</h3><p>Ar-Rashid</p></div>
-      <div class="card"><h3>الصبور</h3><p>As-Sabur</p></div>
+    <div class="cards-container" id="namesContainer">
+<!-- 99 Names of Allah Cards -->
+<div class="cards-container" id="namesContainer">
+  <div class="card"><h3>1. الرَّحْمَنُ</h3><p>Ar-Rahman (The Beneficent)</p></div>
+  <div class="card"><h3>2. الرَّحِيمُ</h3><p>Ar-Raheem (The Merciful)</p></div>
+  <div class="card"><h3>3. الْمَلِكُ</h3><p>Al-Malik (The King)</p></div>
+  <div class="card"><h3>4. الْقُدُّوسُ</h3><p>Al-Quddus (The Most Sacred)</p></div>
+  <div class="card"><h3>5. السَّلاَمُ</h3><p>As-Salam (The Source of Peace)</p></div>
+  <div class="card"><h3>6. الْمُؤْمِنُ</h3><p>Al-Mu’min (The Giver of Faith)</p></div>
+  <div class="card"><h3>7. الْمُهَيْمِنُ</h3><p>Al-Muhaymin (The Protector)</p></div>
+  <div class="card"><h3>8. الْعَزِيزُ</h3><p>Al-Aziz (The Almighty)</p></div>
+  <div class="card"><h3>9. الْجَبَّارُ</h3><p>Al-Jabbar (The Compeller)</p></div>
+  <div class="card"><h3>10. الْمُتَكَبِّرُ</h3><p>Al-Mutakabbir (The Supreme)</p></div>
+  <div class="card"><h3>11. الْخَالِقُ</h3><p>Al-Khaliq (The Creator)</p></div>
+  <div class="card"><h3>12. الْبَارِئُ</h3><p>Al-Bari (The Evolver)</p></div>
+  <div class="card"><h3>13. الْمُصَوِّرُ</h3><p>Al-Musawwir (The Fashioner)</p></div>
+  <div class="card"><h3>14. الْغَفَّارُ</h3><p>Al-Ghaffar (The Ever-Forgiving)</p></div>
+  <div class="card"><h3>15. الْقَهَّارُ</h3><p>Al-Qahhar (The All-Compelling Subduer)</p></div>
+  <div class="card"><h3>16. الْوَهَّابُ</h3><p>Al-Wahhab (The Bestower)</p></div>
+  <div class="card"><h3>17. الرَّزَّاقُ</h3><p>Ar-Razzaq (The Provider)</p></div>
+  <div class="card"><h3>18. الْفَتَّاحُ</h3><p>Al-Fattah (The Opener)</p></div>
+  <div class="card"><h3>19. اَلْعَلِيمُ</h3><p>Al-‘Aleem (The All-Knowing)</p></div>
+  <div class="card"><h3>20. الْقَابِضُ</h3><p>Al-Qaabid (The Withholder)</p></div>
+  <div class="card"><h3>21. الْبَاسِطُ</h3><p>Al-Baasit (The Extender)</p></div>
+  <div class="card"><h3>22. الْخَافِضُ</h3><p>Al-Khaafid (The Abaser)</p></div>
+  <div class="card"><h3>23. الرَّافِعُ</h3><p>Ar-Rafi (The Exalter)</p></div>
+  <div class="card"><h3>24. الْمُعِزُّ</h3><p>Al-Mu’izz (The Bestower of Honour)</p></div>
+  <div class="card"><h3>25. الْمُذِلُّ</h3><p>Al-Mudhill (The Humiliator)</p></div>
+  <div class="card"><h3>26. السَّمِيعُ</h3><p>As-Sami (The All-Hearing)</p></div>
+  <div class="card"><h3>27. الْبَصِيرُ</h3><p>Al-Baseer (The All-Seeing)</p></div>
+  <div class="card"><h3>28. الْحَكَمُ</h3><p>Al-Hakam (The Judge)</p></div>
+  <div class="card"><h3>29. الْعَدْلُ</h3><p>Al-‘Adl (The Utterly Just)</p></div>
+  <div class="card"><h3>30. اللَّطِيفُ</h3><p>Al-Lateef (The Subtle One)</p></div>
+  <div class="card"><h3>31. الْخَبِيرُ</h3><p>Al-Khabeer (The All-Aware)</p></div>
+  <div class="card"><h3>32. الْحَلِيمُ</h3><p>Al-Haleem (The Forbearing)</p></div>
+  <div class="card"><h3>33. الْعَظِيمُ</h3><p>Al-Azeem (The Magnificent)</p></div>
+  <div class="card"><h3>34. الْغَفُور</h3><p>Al-Ghafoor (The All-Forgiving)</p></div>
+  <div class="card"><h3>35. الشَّكُورُ</h3><p>Ash-Shakoor (The Most Appreciative)</p></div>
+  <div class="card"><h3>36. الْعَلِيُّ</h3><p>Al-Aliyy (The Most High)</p></div>
+  <div class="card"><h3>37. الْكَبِيرُ</h3><p>Al-Kabeer (The Most Great)</p></div>
+  <div class="card"><h3>38. الْحَفِيظُ</h3><p>Al-Hafeedh (The Preserver)</p></div>
+  <div class="card"><h3>39. الْمُقِيتُ</h3><p>Al-Muqeet (The Sustainer)</p></div>
+  <div class="card"><h3>40. الْحسِيبُ</h3><p>Al-Haseeb (The Reckoner)</p></div>
+  <div class="card"><h3>41. الْجَلِيلُ</h3><p>Al-Jaleel (The Majestic)</p></div>
+  <div class="card"><h3>42. الْكَرِيمُ</h3><p>Al-Kareem (The Generous)</p></div>
+  <div class="card"><h3>43. الرَّقِيبُ</h3><p>Ar-Raqeeb (The Watchful)</p></div>
+  <div class="card"><h3>44. الْمُجِيبُ</h3><p>Al-Mujeeb (The Responsive)</p></div>
+  <div class="card"><h3>45. الْوَاسِعُ</h3><p>Al-Waasi (The All-Encompassing)</p></div>
+  <div class="card"><h3>46. الْحَكِيمُ</h3><p>Al-Hakeem (The Most Wise)</p></div>
+  <div class="card"><h3>47. الْوَدُودُ</h3><p>Al-Wadud (The Most Loving)</p></div>
+  <div class="card"><h3>48. الْمَجِيدُ</h3><p>Al-Majeed (The Glorious)</p></div>
+  <div class="card"><h3>49. الْبَاعِثُ</h3><p>Al-Ba’ith (The Resurrector)</p></div>
+  <div class="card"><h3>50. الشَّهِيدُ</h3><p>Ash-Shaheed (The Witness)</p></div>
+  <div class="card"><h3>51. الْحَقُ</h3><p>Al-Haqq (The Truth)</p></div>
+  <div class="card"><h3>52. الْوَكِيلُ</h3><p>Al-Wakeel (The Trustee)</p></div>
+  <div class="card"><h3>53. الْقَوِيُ</h3><p>Al-Qawiyy (The All-Strong)</p></div>
+  <div class="card"><h3>54. الْمَتِينُ</h3><p>Al-Mateen (The Firm)</p></div>
+  <div class="card"><h3>55. الْوَلِيُ</h3><p>Al-Waliyy (The Protecting Friend)</p></div>
+  <div class="card"><h3>56. الْحَمِيدُ</h3><p>Al-Hameed (The Praiseworthy)</p></div>
+  <div class="card"><h3>57. الْمُحْصِي</h3><p>Al-Muhsi (The Accounter)</p></div>
+  <div class="card"><h3>58. الْمُبْدِئُ</h3><p>Al-Mubdi (The Originator)</p></div>
+  <div class="card"><h3>59. الْمُعِيدُ</h3><p>Al-Mueed (The Restorer)</p></div>
+  <div class="card"><h3>60. الْمُحْيِي</h3><p>Al-Muhyi (The Giver of Life)</p></div>
+  <div class="card"><h3>61. الْمُمِيتُ</h3><p>Al-Mumeet (The Creator of Death)</p></div>
+  <div class="card"><h3>62. الْحَيُ</h3><p>Al-Hayy (The Ever-Living)</p></div>
+  <div class="card"><h3>63. الْقَيُّومُ</h3><p>Al-Qayyum (The Sustainer)</p></div>
+  <div class="card"><h3>64. الْوَاجِدُ</h3><p>Al-Wajid (The Finder)</p></div>
+  <div class="card"><h3>65. الْمَاجِدُ</h3><p>Al-Majid (The Noble)</p></div>
+  <div class="card"><h3>66. الْواحِدُ</h3><p>Al-Wahid (The One)</p></div>
+  <div class="card"><h3>67. اَلاَحَدُ</h3><p>Al-Ahad (The Unique)</p></div>
+  <div class="card"><h3>68. الصَّمَدُ</h3><p>As-Samad (The Eternal)</p></div>
+  <div class="card"><h3>69. الْقَادِرُ</h3><p>Al-Qadeer (The Omnipotent)</p></div>
+  <div class="card"><h3>70. الْمُقْتَدِرُ</h3><p>Al-Muqtadir (The Powerful)</p></div>
+  <div class="card"><h3>71. الْمُقَدِّمُ</h3><p>Al-Muqaddim (The Expediter)</p></div>
+  <div class="card"><h3>72. الْمُؤَخِّرُ</h3><p>Al-Mu’akhkhir (The Delayer)</p></div>
+  <div class="card"><h3>73. الأوَّلُ</h3><p>Al-Awwal (The First)</p></div>
+  <div class="card"><h3>74. الآخِرُ</h3><p>Al-Aakhir (The Last)</p></div>
+  <div class="card"><h3>75. الظَّاهِرُ</h3><p>Az-Zaahir (The Manifest)</p></div>
+  <div class="card"><h3>76. الْبَاطِنُ</h3><p>Al-Baatin (The Hidden)</p></div>
+  <div class="card"><h3>77. الْوَالِي</h3><p>Al-Waali (The Sole Governor)</p></div>
+  <div class="card"><h3>78. الْمُتَعَالِي</h3><p>Al-Muta’ali (The Most Exalted)</p></div>
+  <div class="card"><h3>79. الْبَرُّ</h3><p>Al-Barr (The Source of All Goodness)</p></div>
+  <div class="card"><h3>80. التَّوَابُ</h3><p>At-Tawwab (The Ever-Pardoning)</p></div>
+  <div class="card"><h3>81. الْمُنْتَقِمُ</h3><p>Al-Muntaqim (The Avenger)</p></div>
+  <div class="card"><h3>82. العَفُوُ</h3><p>Al-‘Afuww (The Pardoner)</p></div>
+  <div class="card"><h3>83. الرَّؤُوفُ</h3><p>Ar-Ra’oof (The Compassionate)</p></div>
+  <div class="card"><h3>84. مُلِكُ الْمُلْكِ</h3><p>Malik-ul-Mulk (Master of the Kingdom)</p></div>
+  <div class="card"><h3>85. ذُوالْجَلاَلِ وَالإكْرَامِ</h3><p>Dhul-Jalaali-wal-Ikraam (Lord of Glory and Honour)</p></div>
+  <div class="card"><h3>86. الْمُقْسِطُ</h3><p>Al-Muqsit (The Just)</p></div>
+  <div class="card"><h3>87. الْجَامِعُ</h3><p>Al-Jaami’ (The Gatherer)</p></div>
+  <div class="card"><h3>88. الْغَنِيُ</h3><p>Al-Ghaniyy (The Self-Sufficient)</p></div>
+  <div class="card"><h3>89. الْمُغْنِي</h3><p>Al-Mughni (The Enricher)</p></div>
+  <div class="card"><h3>90. اَلْمَانِعُ</h3><p>Al-Maani’ (The Preventer)</p></div>
+  <div class="card"><h3>91. الضَّارَ</h3><p>Ad-Daarr (The Distresser)</p></div>
+  <div class="card"><h3>92. النَّافِعُ</h3><p>An-Naafi’ (The Propitious)</p></div>
+  <div class="card"><h3>93. النُّورُ</h3><p>An-Noor (The Light)</p></div>
+  <div class="card"><h3>94. الْهَادِي</h3><p>Al-Haadi (The Guide)</p></div>
+  <div class="card"><h3>95. الْبَدِيعُ</h3><p>Al-Badee’ (The Incomparable)</p></div>
+  <div class="card"><h3>96. الْبَاقِي</h3><p>Al-Baaqi (The Everlasting)</p></div>
+  <div class="card"><h3>97. الْوَارِثُ</h3><p>Al-Waarith (The Inheritor)</p></div>
+  <div class="card"><h3>98. الرَّشِيدُ</h3><p>Ar-Rasheed (The Guide to the Right Path)</p></div>
+  <div class="card"><h3>99. الصَّبُورُ</h3><p>As-Saboor (The Patient)</p></div>
+</div>
     </div>
 
     <button onclick="window.location.href='menu.html'">🔙 Back to Menu</button>
   </div>
+
+  <script src="menu.js"></script>
 </body>
 </html>
